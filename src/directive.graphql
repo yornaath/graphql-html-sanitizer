@@ -1,0 +1,7 @@
+
+directive @sanitizeHTML(allowedTags: [String], 
+                        allowedIframeHostnames: [String], 
+                        selfClosing: [String], 
+                        allowedSchemes: [String], 
+                        allowedSchemesAppliedToAttributes: [String]) 
+                        on FIELD_DEFINITION | INPUT_FIELD_DEFINITION

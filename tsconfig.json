@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es6",
+    "esModuleInterop": false,
+    "lib": [
+      "esnext"
+    ],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
+    "declaration": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+}
