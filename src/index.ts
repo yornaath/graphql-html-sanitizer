@@ -1,3 +1,6 @@
 
-export { default as Type } from './SanitizedHTMLType'
-export { default as Directive } from './SanitizeHTMLDirective'
+import SanitizedHTMLType from './SanitizedHTMLType'
+import SanitizeHTMLDirective from './SanitizeHTMLDirective'
+
+export const Type = SanitizedHTMLType
+export const Directive = SanitizeHTMLDirective
