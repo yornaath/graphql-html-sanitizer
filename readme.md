@@ -5,18 +5,18 @@ Contains a graphql directive and scalar type for sanitizing html input and field
 
 ## Installation
 
-### Add package
+### Install package
 
 ```
-yarn add graphql-html-sanitizer # typescript definitions are included
+yarn add graphql-html-sanitizer
+# typescript definitions are included
 ```
 
 
-### Add directive and/or scalar type
+### Add directive and/or scalar type to your graphql schema
 
 __your_schema.graphql__
 ```graphql
-
 directive @sanitizeHTML(allowedTags: [String], 
                         allowedIframeHostnames: [String], 
                         selfClosing: [String], 
@@ -26,23 +26,22 @@ directive @sanitizeHTML(allowedTags: [String],
 
 scalar SanitizedHTML
 
-
-type Post {
+type PostUsingDirctive {
   content: String @sanitizeHTML(allowedTags: ["p", "i", "b"])
-  #or
+}
+
+type PostUsingScalar {
   content: SanitizedHTML # Removes all script injection by default and leaves safe html
 }
 
 type PostInput {
   content: String! @sanitizeHTML(allowedTags: ["p", "i", "b"])
 }
-
 ```
 
-### Add to Apollo server
+### Idd to Apollo server
 
 ```typescript
-
 import { ApolloServer } from 'apollo-server-lambda'
 import * as GQLHTMLSanitizer from "graphql-html-sanitizer"
 
@@ -51,11 +50,10 @@ const typeDefs = require('your_schema.graphql')
 const server = new ApolloServer({
   typeDefs,
   resolvers: {
-    SanitizedHTML: GQLHTMLSanitizer.Type
+    SanitizedHTML: GQLHTMLSanitizer.Type // if using: scalar SanitizedHTML
   },
   schemaDirectives: {
-    sanitizeHTML: GQLHTMLSanitizer.Directive
+    sanitizeHTML: GQLHTMLSanitizer.Directive // if using: directive @sanitizeHTML
   }
 })
-
 ```
