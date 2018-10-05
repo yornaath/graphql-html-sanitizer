@@ -7,7 +7,7 @@ Contains a graphql directive and scalar type for sanitizing html input and field
 
 ### Install package
 
-```
+```bash
 yarn add graphql-html-sanitizer
 # typescript definitions are included
 ```
