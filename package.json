@@ -1,6 +1,6 @@
 {
   "name": "graphql-html-sanitizer",
-  "version": "0.0.4",
+  "version": "0.0.41",
   "description": "Directive and Scalar type for sanitizing html field data and input",
   "main": "dist/index.js",
   "author": "Joern Andre Tangen @gorillatron",
