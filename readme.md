@@ -39,7 +39,7 @@ type PostInput {
 }
 ```
 
-### Idd to Apollo server
+### Add to Apollo server
 
 ```typescript
 import { ApolloServer } from 'apollo-server-lambda'
